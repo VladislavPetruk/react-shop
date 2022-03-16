@@ -1,0 +1,130 @@
+// products
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 30px;
+
+  @media (max-width: 1150px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 580px) {
+    grid-template-columns: auto;
+  }
+}
+
+.product {
+  justify-self: center;
+  max-width: 269px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+  border-radius: 12px;
+  transition: transform 0.2s ease-in-out;
+
+  &__img {
+    position: relative;
+    margin-bottom: 15px;
+
+    img {
+      border-radius: 12px;
+      height: 180px;
+      object-fit: contain;
+    }
+  }
+
+  &__discount {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 0 8px;
+    background: #e8f9c7;
+    border-radius: 12px;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: #4fb748;
+  }
+
+  &__title {
+    span {
+      display: -webkit-box;
+      max-height: 25px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      font-family: "Poppins";
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 25px;
+      color: #151515;
+    }
+  }
+
+  &__description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    max-height: 16px;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-size: 12px;
+    line-height: 16px;
+    color: #575757;
+  }
+
+  &__more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .price,
+    .price__new {
+      font-family: "Poppins";
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      color: #151515;
+    }
+    .price__old {
+      font-family: "Poppins";
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 18px;
+      color: #a9a9a9;
+    }
+  }
+
+  &__btn{
+    padding: 6px 12px;
+    background: #4fb748;
+    border-radius: 12px;
+    font-family: "Poppins";
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    color: #FFFFFF;
+
+    &_active{
+      background: #9a9a9d;
+      pointer-events: none;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}

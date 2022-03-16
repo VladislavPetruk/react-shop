@@ -1,0 +1,130 @@
+// dropdown
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: 1fr;
+  width: 400px;
+  height: 100%;
+  padding: 24px 16px 16px;
+  background: #ffffff;
+  box-shadow: 0px 2px 32px rgba(0, 0, 0, 0.15);
+  // transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+
+  &__active {
+    transform: none;
+  }
+
+  &_top {
+    position: relative;
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+  &__title {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 39px;
+    color: #151515;
+  }
+
+  &__products {
+    margin-top: 25px;
+    max-height: calc(100vh - 280px);
+    overflow-y: auto;
+  }
+
+  &_item {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #f9f9f9;
+    }
+
+    img{
+      min-width: 75px;
+      height: 75px;
+      object-fit: contain;
+    }
+
+    &__title {
+      font-family: "Poppins";
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 22px;
+      color: #151515;
+      display: -webkit-box;
+      max-height: 22px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+
+    &__info {
+      flex: 1 1 auto;
+      margin-left: 15px;
+    }
+
+    &__remove {
+      display: flex;
+      align-items: center;
+
+      span {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: #a9a9a9;
+        margin-left: 8px;
+      }
+    }
+  }
+  &__subtotal {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: #000000;
+  }
+  &__total_price {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 39px;
+    color: #151515;
+  }
+
+  &_next {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    margin-top: 25px;
+    border-top: 1px solid #ebebeb;
+
+    &__txt {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 22px;
+      color: #151515;
+    }
+
+    &__btn {
+      display: inline-block;
+      padding: 12px 16px;
+    }
+  }
+}
